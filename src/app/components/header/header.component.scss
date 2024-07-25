@@ -1,0 +1,142 @@
+.football-header {
+  background: var(--btnColor);
+  color: #fff;
+  padding: 10px 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.football-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap; 
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  h1{
+    color: #000;
+    font-family: 'poppins-bold';
+  }
+}
+
+.logo img {
+  width:60px;
+  height: 60px;
+  margin-right: 10px;
+}
+
+.logo h1 {
+  font-size: 24px;
+  margin: 0;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+
+
+nav ul li a {
+
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+.item-menu{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
+  // background-color: red;
+  min-width: 80px !important;
+}
+
+nav ul a:hover {
+  color: #000; 
+}
+
+.search {
+  display: flex;
+  align-items: center;
+}
+
+
+.search input {
+  padding: 5px 10px;
+  border: none; 
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.active {
+  background-color: var(--primaryColor);
+  padding: 10px 20px; 
+  border-radius: 20px;
+}
+
+.search button {
+  background: #f4c542; 
+  border: none;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.search button i {
+  font-size: 16px;
+}
+
+
+@media (max-width: 768px) {
+  .football-header {
+    padding: 10px;
+  }
+
+  .logo h1 {
+    font-size: 20px;
+  }
+
+  nav {
+   margin: 10px auto;
+  }
+
+
+
+
+  .search input {
+    font-size: 14px;
+  }
+
+  .search button {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .logo img {
+    height: 40px;
+  }
+
+  .logo h1 {
+    font-size: 18px;
+  }
+
+  .active {
+    padding: 10px 15px; 
+  }
+}

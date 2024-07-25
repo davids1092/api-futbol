@@ -1,0 +1,20 @@
+<header class="football-header">
+    <div class="container">
+      <div class="logo">
+        <img [src]="imgHeader" alt="Football Logo">
+        <h1>API futbol</h1>
+      </div>
+      <nav>
+        <ul>
+            @for (item of items; track $index) {
+              <div class="item-menu" [ngClass]="{'active' : item.active}">
+                <a   (click)="go(item.route)" >{{item.name}}</a>
+              </div>
+               
+            }
+        </ul>
+      </nav>
+    
+    </div>
+  </header>
+  

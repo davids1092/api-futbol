@@ -1,0 +1,108 @@
+
+<div class="title">
+  @if (!save) {
+    <h2>Editar</h2>
+  }
+  @else {
+    <h2>Nuevo</h2>
+  }
+</div>
+
+
+@if (data.title == 'Equipos') {
+    <form class="form" [formGroup]="form" >
+        <div>
+          <mat-form-field appearance="outline">
+            <mat-label>Ciudad</mat-label>
+            <input matInput type="text"   formControlName="country" />
+            <mat-error *ngIf="form.controls['country'].invalid">
+                {{ getErrorMessage(form.controls["country"]) }}</mat-error>
+          </mat-form-field>
+        </div>
+      
+        <div>
+          <mat-form-field appearance="outline">
+            <mat-label>Nombre</mat-label>
+            <input matInput type="text"   formControlName="name" />
+            <mat-error *ngIf="form.controls['name'].invalid">
+                {{ getErrorMessage(form.controls["name"]) }}</mat-error>
+          </mat-form-field>
+        </div>
+      
+        <div>
+          <mat-form-field appearance="outline">
+            <mat-label>Abreviatura</mat-label>
+            <input matInput type="text"   formControlName="shortname" maxlength="3" />
+            <mat-error *ngIf="form.controls['shortname'].invalid">
+                {{ getErrorMessage(form.controls["shortname"]) }}</mat-error>
+          </mat-form-field>
+        </div>
+      <div class="actions">
+        <button   class="btn" mat-dialog-close>Cancelar</button>
+        @if (!save) {
+          <button (click)="editFunction()"  type="submit" class="btn" [disabled]="form.invalid">Editar</button>
+        }
+        @else {
+          <button (click)="saveFunction()"   type="submit" class="btn" [disabled]="form.invalid">Guardar</button>
+        }
+        
+    
+    
+      </div>
+      
+      </form>
+}
+@else  () {
+  <form class="form" [formGroup]="formT"  >
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Ciudad</mat-label>
+        <input matInput type="text"  formControlName="country" />
+        <mat-error *ngIf="formT.controls['country'].invalid">
+            {{ getErrorMessage(formT.controls["country"]) }}</mat-error>
+      </mat-form-field>
+    </div>
+  
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Nombre</mat-label>
+        <input matInput type="text"  formControlName="name" />
+        <mat-error *ngIf="formT.controls['name'].invalid">
+            {{ getErrorMessage(formT.controls["name"]) }}</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Participantes</mat-label>
+        <input matInput type="text"   formControlName="participant" />
+        <mat-error *ngIf="formT.controls['participant'].invalid">
+            {{ getErrorMessage(formT.controls["participant"]) }}</mat-error>
+      </mat-form-field>
+    </div>
+  
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Abreviatura</mat-label>
+        <input matInput type="text"  formControlName="shortname" maxlength="3" />
+        <mat-error *ngIf="formT.controls['shortname'].invalid">
+            {{ getErrorMessage(formT.controls["shortname"]) }}</mat-error>
+      </mat-form-field>
+    </div>
+  <div class="actions">
+    <button   class="btn" mat-dialog-close>Cancelar</button>
+    @if (!save) {
+      <button (click)="editFunction()"  type="submit" class="btn" [disabled]="formT.invalid">Editar</button>
+    }
+    @else {
+      <button (click)="saveFunction()"   type="submit" class="btn" [disabled]="formT.invalid">Guardar</button>
+    }
+
+  </div>
+  
+  </form>
+}
+
+
+
+  

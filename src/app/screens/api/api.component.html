@@ -1,0 +1,16 @@
+<div class="container-api">
+
+    <app-header></app-header>
+    <img class="blob1" [src]="blob1" alt="">
+    <img class="blob2" [src]="blob2" alt="">
+    @if (columns.length != 0 && values.length != 0) {
+        <app-table class="table" [columns]="columns"
+        [data]="values" [tittle]="tittleTable"></app-table>
+    }
+    <div class="containerBtn">
+        <button (click)="switch1(tittleTable)" class="btn">Restaurar información de API</button>
+    </div>
+
+  
+</div>
+

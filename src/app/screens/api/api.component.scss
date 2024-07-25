@@ -1,0 +1,56 @@
+.container-api{
+    width: 100%;
+    max-width: 100vw;
+    min-height: 100vh;
+    // background: aqua;
+    position: relative;
+    background: linear-gradient(180deg, var(--btnColor) 0%, rgba(15,4,51,1) 44%, var(--btnColor) 100%);
+    overflow: hidden;
+
+    .table{
+        z-index: 2 ;
+        position: relative;
+        width: 80%;
+        display: block;
+        margin: 20px auto;
+    }
+    .blob1{
+        position: absolute;
+        z-index: 1;
+        bottom: -0;
+        right: -300px;
+        opacity: 0.5;
+        }
+        .blob2{
+            position: absolute;
+            top: -50vh;
+            left: 0;
+            z-index: 1;
+            opacity: 0.5;
+            }
+
+            app-header{
+                position: relative;
+                z-index: 2 ;
+            }
+    
+}
+
+.containerBtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px auto;
+    z-index: 2;
+    position: relative;
+    .btn{
+        background-color: var(--btnColor);
+    }
+}
+
+@media (max-width: 480px) {
+    .table{
+        width: 100%;
+       
+    }
+}

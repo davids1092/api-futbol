@@ -1,0 +1,30 @@
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+.title{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
+    h2{
+        font-family: 'poppins-bold' ;
+    }
+   
+}
+.btn{
+    background-color: var(--btnColor);
+    margin-right: 5px;
+    width: 50%;
+}
+.actions{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+}

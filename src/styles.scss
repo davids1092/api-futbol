@@ -1,1 +1,62 @@
 /* You can add global styles to this file, and also import other style files */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body { height: 100%;font-family: poppins !important; }
+body { margin: 0; font-family: poppins !important; }
+
+@font-face {
+    font-family: poppins ;
+    src: url(../src/assets/fonts/Poppins-Light.ttf)
+}
+@font-face {
+    font-family: poppins-bold ;
+    src: url(../src/assets/fonts/Poppins-Bold.ttf)
+}
+
+:root{
+    --primaryColor: #36C2CE ;
+    --secondaryColor: #77E4C8 ;
+    --btnColor : #478CCF;
+    --hoverColor :#4535C1;
+}
+
+
+.btn{
+    cursor: pointer;
+    font-family: 'poppins';
+    padding: 10px 30px;
+    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 15px;
+    color: #ffff;
+    background-image: linear-gradient(to left, var(--btnColor) 50% , var(--hoverColor) 50%) ;
+    background-size: 200% ;
+    background-position: right ;
+    color: #000;
+    font-family: poppins-bold ;
+    transition: background 0.5s, color 0.25s ;
+}
+.btn:hover{
+    background-color: var(--hoverColor) ;
+    background-position: left  ;
+    color: #fff;
+
+   
+}
+.btn:disabled{
+    background: gray !important ; 
+}
+
+
+
+
+   
+
+
+

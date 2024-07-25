@@ -1,0 +1,46 @@
+.container-home{
+    width: 100%;
+    min-width: 100vw;
+    height: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(180deg, var(--btnColor) 0%, rgba(15,4,51,1) 44%, var(--btnColor) 100%);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    h1{
+        color: #ffff;
+        font-size: 10vw;
+        height: 100px;
+        margin-bottom: 40px;
+        z-index: 2;
+    }
+    h2{
+        color: #ffff;
+        font-size: 4vw;
+        height: 100px;
+        margin-bottom: 40px;
+        z-index: 2;
+    }
+}
+.blob1{
+position: absolute;
+z-index: 1;
+bottom: -50vh;
+right: 0;
+}
+.blob2{
+    position: absolute;
+    top: -50vh;
+    left: 0;
+    z-index: 1;
+    }
+.btn{
+    z-index: 2;
+    background-color: var(--btnColor);
+   mat-icon{
+    margin-left: 10px;
+   }
+}
