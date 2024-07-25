@@ -39,7 +39,7 @@ export class EditTeamsComponent implements OnInit {
     });
  
     this.dataAutocompletar = JSON.parse(this.data.content)
-    //console.log('data recibida para editar',this.dataAutocompletar)
+    console.log('data recibida para editar',this.dataAutocompletar)
     if(Object.keys(this.dataAutocompletar).length == 0 ){
       this.save = true;
 

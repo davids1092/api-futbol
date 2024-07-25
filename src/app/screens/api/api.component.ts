@@ -145,8 +145,8 @@ export class ApiComponent implements OnInit{
               'id':i.id,
               'ciudad':i.country.name,
               'nombre': i.name,
-              'participantes':i.shortName,
-              'abreviatura':i.participantType.name
+              'participantes':i.participantType.name,
+              'abreviatura':i.shortName
             }
             this.values.push(team)
           }
