@@ -28,13 +28,13 @@ body { margin: 0; font-family: poppins !important; }
     cursor: pointer;
     font-family: 'poppins-bold';
     font-size: 1.1rem;
+    border: 2px solid #ffff; 
     padding: 10px 30px;
     background: none;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: none;
-    border-radius: 15px;
+    border-radius: 15px; 
     color: #ffff;
     background-image: linear-gradient(to left, var(--btnColor) 50% , var(--hoverColor) 50%) ;
     background-size: 200% ;

@@ -7,6 +7,7 @@
     background: linear-gradient(180deg, var(--btnColor) 0%, rgba(15,4,51,1) 44%, var(--btnColor) 100%);
     display: flex;
     justify-content: center;
+    font-family: poppins;
     flex-direction: column;
     align-items: center;
     position: relative;
@@ -16,6 +17,11 @@
         height: 100px;
         margin-bottom: 40px;
         z-index: 2;
+        animation: fadeInOut 1s forwards;
+    }
+    h3{
+        z-index: 2;
+        color: #ffff;
     }
     h2{
         color: #ffff;
@@ -23,6 +29,7 @@
         height: 100px;
         margin-bottom: 40px;
         z-index: 2;
+        animation: fadeInOut 1s forwards;
     }
 }
 .blob1{
@@ -44,3 +51,17 @@ right: 0;
     margin-left: 10px;
    }
 }
+
+@keyframes fadeInOut {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    
+    }
+  
+    100% {
+      opacity: 1;
+      transform: translateY(20px);
+
+    }
+  }

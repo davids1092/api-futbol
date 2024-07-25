@@ -55,9 +55,24 @@ h2 {
   font-size: 40px;
   font-family: 'poppins-bold';
   color: #ffff;
-  background: var(--btnColor);
+
   padding: 20px;
   border-radius: 10px;
+  animation: fadeInOut 1s forwards;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+    background: var(--primaryColor);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(20px);
+    background: var(--btnColor);
+  }
 }
 
 mat-header-cell, mat-cell {
