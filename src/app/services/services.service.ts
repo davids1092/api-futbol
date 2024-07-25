@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { environment } from '../../environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
@@ -8,11 +9,11 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export class ServicesService {
 
   private selection = new BehaviorSubject <string>('Equipos')
-url = 'https://football-data1.p.rapidapi.com'
+url = environment.urlServices
  httpOptions ={
     headers: new HttpHeaders({
-      'x-rapidapi-key': 'd5b730d756msh7cbd87b0a4c1ef9p1dae89jsn140844fed732',
-		  'x-rapidapi-host': 'football-data1.p.rapidapi.com'
+      'x-rapidapi-key': environment.apiKey,
+		  'x-rapidapi-host': environment.host
     })
 
 }
