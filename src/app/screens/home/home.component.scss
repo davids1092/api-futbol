@@ -37,12 +37,14 @@ position: absolute;
 z-index: 1;
 bottom: -50vh;
 right: 0;
+animation: rotate 2s forwards;
 }
 .blob2{
     position: absolute;
     top: -50vh;
     left: 0;
     z-index: 1;
+    animation: rotate2 2s forwards;
     }
 .btn{
     z-index: 2;
@@ -62,6 +64,32 @@ right: 0;
     100% {
       opacity: 1;
       transform: translateY(20px);
+
+    }
+  }
+  @keyframes rotate {
+    0% {
+      opacity: 0;
+      transform: rotate(180deg)
+    
+    }
+  
+    100% {
+      opacity: 1;
+      transform: rotate(0deg)
+
+    }
+  }
+  @keyframes rotate2 {
+    0% {
+      opacity: 0;
+      transform: rotate(-180deg)
+    
+    }
+  
+    100% {
+      opacity: 1;
+      transform: rotate(0deg)
 
     }
   }
