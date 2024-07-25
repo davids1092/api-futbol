@@ -14,6 +14,7 @@ td {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   align-items: center;
 
   .btn{
@@ -23,7 +24,8 @@ td {
  
 }
 mat-paginator{
- background: none !important;
+ background: rgb(253, 233, 204) !important;
+ font-family: poppins;
  button {
   background: red !important;
  }
@@ -52,7 +54,10 @@ h2 {
   margin: 40px 0px;
   font-size: 40px;
   font-family: 'poppins-bold';
-  color: #000;
+  color: #ffff;
+  background: var(--btnColor);
+  padding: 20px;
+  border-radius: 10px;
 }
 
 mat-header-cell, mat-cell {
@@ -84,7 +89,7 @@ tr:hover {
   background-color: var(--btnColor);
 }
 
-/* Responsive Styles */
+
 @media (max-width: 768px) {
   .container-table {
     padding: 10px;
@@ -121,9 +126,16 @@ tr:hover {
 @media (max-width: 480px) {
   h2 {
     font-size: 24px;
+    width: 100%;
+    text-align: center;
   }
   .container-table{
     overflow-x: scroll;
+
+   
+  }
+  .btn{
+    width: 100%;
   }
 
   table {

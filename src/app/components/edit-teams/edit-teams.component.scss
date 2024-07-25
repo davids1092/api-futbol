@@ -3,23 +3,34 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 40px;
+    // padding: 40px;
+    width: 40vw;
+}
+.form div{
+    width: 80%;
+
+    mat-form-field{
+        width: 100%;
+    }
 }
 .title{
     width: 100%;
     display: flex;
+  
     justify-content: center;
     align-items: center;
-    margin: 10px auto;
+    margin: 20px auto;
     h2{
         font-family: 'poppins-bold' ;
+        font-size: 1.7rem;
     }
    
 }
 .btn{
     background-color: var(--btnColor);
     margin-right: 5px;
-    width: 50%;
+    width: 70%;
+    margin-top: 10px;
 }
 .actions{
     width: 100%;
@@ -27,4 +38,13 @@
     align-items: center;
     justify-content: center;
     margin: 20px auto;
+    flex-wrap: wrap;
 }
+
+
+@media (max-width: 768px) {
+    .form{
+        width: 80vw;
+    }
+}
+

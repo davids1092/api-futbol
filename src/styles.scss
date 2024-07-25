@@ -26,7 +26,8 @@ body { margin: 0; font-family: poppins !important; }
 
 .btn{
     cursor: pointer;
-    font-family: 'poppins';
+    font-family: 'poppins-bold';
+    font-size: 1.1rem;
     padding: 10px 30px;
     background: none;
     display: flex;
@@ -52,6 +53,8 @@ body { margin: 0; font-family: poppins !important; }
 .btn:disabled{
     background: gray !important ; 
 }
+
+
 
 
 

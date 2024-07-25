@@ -39,7 +39,7 @@ export class EditTeamsComponent implements OnInit {
     });
  
     this.dataAutocompletar = JSON.parse(this.data.content)
-    console.log('data recibida para editar',this.dataAutocompletar)
+    //console.log('data recibida para editar',this.dataAutocompletar)
     if(Object.keys(this.dataAutocompletar).length == 0 ){
       this.save = true;
 
@@ -66,41 +66,39 @@ export class EditTeamsComponent implements OnInit {
 
     if(this.data.title == 'Equipos'){
     if (this.form.valid) {
-      console.log('Form Data:', this.form.value);
+      //console.log('Form Data:', this.form.value);
       
       this.closeDialog( this.form.value,'edit')
     } else {
-      console.log('Form is invalid');
+      //console.log('Form is invalid');
     }
   }else{
     if (this.formT.valid) {
-      console.log('Form Data:', this.formT.value);
+      //console.log('Form Data:', this.formT.value);
 
       this.closeDialog( this.formT.value ,'edit')
     } else {
-      console.log('Form is invalid');
+      //console.log('Form is invalid');
     }
   }
   }
 
   saveFunction(){
-
-
     if(this.data.title == 'Equipos'){
       if (this.form.valid) {
-        console.log('Form Data:', this.form.value);
+        //console.log('Form Data:', this.form.value);
         
         this.closeDialog( this.form.value,'save')
       } else {
-        console.log('Form is invalid');
+        //console.log('Form is invalid');
       }
     }else{
       if (this.formT.valid) {
-        console.log('Form Data:', this.formT.value);
+        //console.log('Form Data:', this.formT.value);
   
         this.closeDialog( this.formT.value ,'save')
       } else {
-        console.log('Form is invalid');
+        //console.log('Form is invalid');
       }
     }
    

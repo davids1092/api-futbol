@@ -25,7 +25,7 @@ url = 'https://football-data1.p.rapidapi.com'
     this.selection.next(sel);
   }
   getSelection() :Observable<string>{
-    console.log('seleccion en header', this.selection)
+    //console.log('seleccion en header', this.selection)
     return this.selection.asObservable()
 ;  }
 

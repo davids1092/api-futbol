@@ -32,7 +32,7 @@ export class ApiComponent implements OnInit{
     sessionStorage.clear()
   this.services.getSelection().subscribe({
     next:(x:any)=>{
-      console.log('seleccion del usuario en el api', x)
+      //console.log('seleccion del usuario en el api', x)
       if(x != ''){
      
         this.columns = []
@@ -61,7 +61,7 @@ export class ApiComponent implements OnInit{
   }
   switch1(x:string){
     this.alerts.alertWait('Consultando ...')
-    console.log('eliminando del session', x)
+    //console.log('eliminando del session', x)
     sessionStorage.removeItem(x)
     switch(x){
       case 'Home':
@@ -81,7 +81,7 @@ export class ApiComponent implements OnInit{
   findTeams(){
     this.values = []
     this.columns = []
-    console.log('session',sessionStorage.getItem('Equipos'))
+    //console.log('session',sessionStorage.getItem('Equipos'))
     if(sessionStorage.getItem('Equipos') == null){
     this.services.findTeams().subscribe({
       next:(x:any)=>{
@@ -97,16 +97,19 @@ export class ApiComponent implements OnInit{
           this.values.push(team)
         }
       
-        console.log('respesta equipos',x)
+        //console.log('respesta equipos',x)
         Swal.close()
+      },
+      error:(err:any)=>{
+        this.alerts.alertCustomError('Error al consultar equipos')
       }
     })
   }else{
    
-    console.log('entre a la base ')
+    //console.log('entre a la base ')
     let x:any  = sessionStorage.getItem('Equipos')
     x = JSON.parse(x)
-    console.log('base', x)
+    //console.log('base', x)
     this.columns = ['ciudad','nombre','abreviatura']
     setTimeout(() => {
       for(let i of x){
@@ -128,9 +131,9 @@ export class ApiComponent implements OnInit{
   findTournaments(){
     this.values = []
     this.columns = []
-    console.log('session',sessionStorage.getItem('Torneos'))
+    //console.log('session',sessionStorage.getItem('Torneos'))
     if(sessionStorage.getItem('Torneos') == null){
-      console.log('entre al servicio ')
+      //console.log('entre al servicio ')
       this.services.findTournaments().subscribe({
         next:(x:any)=>{
           sessionStorage.setItem('Torneos',JSON.stringify(x))
@@ -148,18 +151,21 @@ export class ApiComponent implements OnInit{
             this.values.push(team)
           }
         
-          console.log('respesta torneos',x)
+          //console.log('respesta torneos',x)
              Swal.close()
+        },
+        error:(err:any)=>{
+          this.alerts.alertCustomError('Error al consultar torneos')
         }
         
       })
     }else{
       this.values = []
       this.columns = []
-      console.log('entre a la base ')
+      //console.log('entre a la base ')
       let x:any  = sessionStorage.getItem('Torneos')
       x = JSON.parse(x)
-      console.log('base', x)
+      //console.log('base', x)
       this.columns = ['ciudad','nombre','participantes','abreviatura']
       setTimeout(() => {
         for(let i of x){
@@ -171,7 +177,7 @@ export class ApiComponent implements OnInit{
             'participantes':i.participantType.name
           }
           this.values.push(team)
-        //   console.log('entre a la base ', team)
+        //   //console.log('entre a la base ', team)
         }
 
       }, 100);

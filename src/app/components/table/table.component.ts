@@ -34,7 +34,7 @@ export class TableComponent implements OnInit, AfterViewInit {
        
   editarTabla = ''
   ngOnInit(): void {
-    console.log('data para tabla', this.data);
+    //console.log('data para tabla', this.data);
     this.displayedColumns = [...this.columns, 'actions'];
     this.dataSource.data = this.data;
    
@@ -52,7 +52,7 @@ export class TableComponent implements OnInit, AfterViewInit {
 
   edit(row: any): void {
     this.openDialog(row);
-    console.log('Edit', row);
+    //console.log('Edit', row);
   }
 
   delete(row: any): void {
@@ -65,30 +65,42 @@ export class TableComponent implements OnInit, AfterViewInit {
         cancelButtonText: 'No',
         confirmButtonText: 'Sí'
       }).then((res) => {
-        console.log(res)
+        //console.log(res)
         if(res.isConfirmed){
-          console.log('borrandooooo')
- let teams:any = JSON.parse(sessionStorage.getItem('Equipos')!)
-        const newItems = teams.filter((item:any) => item.id !== row.id);
-        this.dataSource.data =  this.dataSource.data.filter((item:any) => item.id !== row.id);
-        this.dataSource = new MatTableDataSource( this.dataSource.data)
-        this.dataSource.paginator = this.paginator
-        sessionStorage.setItem('Equipos' , JSON.stringify(teams))
+          //console.log('borrandooooo')
+         if(this.tittle == 'Equipos'){
+          let teams:any = JSON.parse(sessionStorage.getItem('Equipos')!)
+          const newItems = teams.filter((item:any) => item.id !== row.id);
+          this.data =  this.dataSource.data.filter((item:any) => item.id !== row.id);
+          this.dataSource = new MatTableDataSource( this.data)
+          this.dataSource.paginator = this.paginator
+          sessionStorage.removeItem('Equipos')
+          sessionStorage.setItem('Equipos' , JSON.stringify(newItems))
+         }else{
+          let teams:any = JSON.parse(sessionStorage.getItem('Torneos')!)
+          const newItems = teams.filter((item:any) => item.id !== row.id);
+          this.data =  this.dataSource.data.filter((item:any) => item.id !== row.id);
+          this.dataSource = new MatTableDataSource( this.data)
+          this.dataSource.paginator = this.paginator
+          sessionStorage.removeItem('Torneos')
+          sessionStorage.setItem('Torneos' , JSON.stringify(newItems))
+         }
+        
         }
        
       })
       
-    console.log('Delete', row);
+    //console.log('Delete', row);
   }
 
   openDialog(row: any): void {
     const dialogRef = this.dialog.open(EditTeamsComponent, {
-      width: '250px',
+      width: 'auto',
       data: { title: this.tittle, content: JSON.stringify(row) },
     });
 
     dialogRef.afterClosed().subscribe((info) => {
-      console.log('cerrar dialog', info);
+      //console.log('cerrar dialog', info);
       if(info != undefined &&  info != ''){
         let result = info.form
 
@@ -96,7 +108,7 @@ export class TableComponent implements OnInit, AfterViewInit {
           if(info.title == 'Equipos'){
             for(let i of this.data){
               if(i.id == result.id){
-                console.log('lo encontre',i)
+                //console.log('lo encontre',i)
                 i.ciudad = result.country
                 i.nombre = result.name
                 i.abreviatura = result.shortname
@@ -115,7 +127,7 @@ export class TableComponent implements OnInit, AfterViewInit {
           }else{
             for(let i of this.data){
               if(i.id == result.id){
-                console.log('lo encontre',i)
+                //console.log('lo encontre',i)
                 i.ciudad = result.country
                 i.nombre = result.name
                 i.abreviatura = result.shortname
@@ -158,7 +170,7 @@ export class TableComponent implements OnInit, AfterViewInit {
               }
             )
 
-            this.dataSource = new MatTableDataSource( this.dataSource.data)
+            this.dataSource = new MatTableDataSource( this.data)
             this.dataSource.paginator = this.paginator
             sessionStorage.setItem('Equipos' , JSON.stringify(teams))
           }
@@ -187,7 +199,7 @@ export class TableComponent implements OnInit, AfterViewInit {
               }
             )
 
-            this.dataSource = new MatTableDataSource( this.dataSource.data)
+            this.dataSource = new MatTableDataSource( this.data)
             this.dataSource.paginator = this.paginator
             sessionStorage.setItem('Torneos' , JSON.stringify(teams))
           }

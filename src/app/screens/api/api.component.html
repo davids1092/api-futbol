@@ -6,6 +6,8 @@
     @if (columns.length != 0 && values.length != 0) {
         <app-table class="table" [columns]="columns"
         [data]="values" [tittle]="tittleTable"></app-table>
+    } @else {
+        <p class="no-data">Restaura la información</p>
     }
     <div class="containerBtn">
         <button (click)="switch1(tittleTable)" class="btn">Restaurar información de API</button>
