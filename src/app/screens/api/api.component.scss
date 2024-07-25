@@ -39,11 +39,11 @@
     position: absolute;
     width: 100vw;
     height: 100vh;
-    background-image: url(../../../assets//img/carga.jfif);
+    background-image: url(../../../assets/img/carga.jfif);
     z-index: 10000;
     background-attachment: fixed;
     background-position: center;
-    animation: fadeInOut 3s forwards ease-in-out;
+    animation: fadeInOut 2s forwards ease-in-out;
 }
 
 @keyframes fadeInOut {

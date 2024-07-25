@@ -14,7 +14,7 @@
         <div>
           <mat-form-field appearance="outline">
             <mat-label>Ciudad</mat-label>
-            <input matInput type="text"   formControlName="country" />
+            <input matInput type="text" minlength="3" maxlength="30"  formControlName="country" />
             <mat-error *ngIf="form.controls['country'].invalid">
                 {{ getErrorMessage(form.controls["country"]) }}</mat-error>
           </mat-form-field>
@@ -23,7 +23,7 @@
         <div>
           <mat-form-field appearance="outline">
             <mat-label>Nombre</mat-label>
-            <input matInput type="text"   formControlName="name" />
+            <input matInput type="text" minlength="3" maxlength="30"  formControlName="name" />
             <mat-error *ngIf="form.controls['name'].invalid">
                 {{ getErrorMessage(form.controls["name"]) }}</mat-error>
           </mat-form-field>
@@ -32,7 +32,7 @@
         <div>
           <mat-form-field appearance="outline">
             <mat-label>Abreviatura</mat-label>
-            <input matInput type="text"   formControlName="shortname" maxlength="3" />
+            <input matInput type="text"  minlength="3"  formControlName="shortname" maxlength="3" />
             <mat-error *ngIf="form.controls['shortname'].invalid">
                 {{ getErrorMessage(form.controls["shortname"]) }}</mat-error>
           </mat-form-field>
@@ -58,7 +58,7 @@
     <div>
       <mat-form-field appearance="outline">
         <mat-label>Ciudad</mat-label>
-        <input matInput type="text"  formControlName="country" />
+        <input matInput type="text" minlength="3" maxlength="30"  formControlName="country" />
         <mat-error *ngIf="formT.controls['country'].invalid">
             {{ getErrorMessage(formT.controls["country"]) }}</mat-error>
       </mat-form-field>
@@ -67,7 +67,7 @@
     <div>
       <mat-form-field appearance="outline">
         <mat-label>Nombre</mat-label>
-        <input matInput type="text"  formControlName="name" />
+        <input matInput type="text" minlength="3" maxlength="30"  formControlName="name" />
         <mat-error *ngIf="formT.controls['name'].invalid">
             {{ getErrorMessage(formT.controls["name"]) }}</mat-error>
       </mat-form-field>
@@ -76,7 +76,7 @@
     <div>
       <mat-form-field appearance="outline">
         <mat-label>Participantes</mat-label>
-        <input matInput type="text"   formControlName="participant" />
+        <input matInput type="text"  minlength="3" maxlength="30"   formControlName="participant" />
         <mat-error *ngIf="formT.controls['participant'].invalid">
             {{ getErrorMessage(formT.controls["participant"]) }}</mat-error>
       </mat-form-field>
@@ -85,7 +85,7 @@
     <div>
       <mat-form-field appearance="outline">
         <mat-label>Abreviatura</mat-label>
-        <input matInput type="text"  formControlName="shortname" maxlength="3" />
+        <input matInput type="text" minlength="3"  formControlName="shortname" maxlength="3" />
         <mat-error *ngIf="formT.controls['shortname'].invalid">
             {{ getErrorMessage(formT.controls["shortname"]) }}</mat-error>
       </mat-form-field>

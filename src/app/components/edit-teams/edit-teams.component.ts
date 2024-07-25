@@ -115,14 +115,22 @@ export class EditTeamsComponent implements OnInit {
   }
 
   getErrorMessage(fieldFormGroup: { errors: any }) {
+
     const ERROR = fieldFormGroup.errors;
+    // console.log(ERROR)
     let message = '';
     if (ERROR['required']) {
       message = 'Debe ingresar este campo';
     } else if (ERROR['email']) {
       message = 'Debe ingresar una dirección de email válida';
-    } else if (ERROR['minlength'] || ERROR['maxlength'] || ERROR['pattern']) {
+
+    }else if ( ERROR['pattern']) {
       message = 'Valor inválido';
+    }else if(ERROR['minlength']){
+      message = `mínimo de caracteres ${ERROR.minlength.requiredLength}`;
+    }
+    else if(ERROR['maxlength'] ){
+      message = 'máximo de caracteres invalido';
     }
     return message;
   }
