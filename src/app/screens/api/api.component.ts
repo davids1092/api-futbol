@@ -6,6 +6,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Alerts } from '../../services/Alerts';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
+import { Subject, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-api',
@@ -16,6 +17,7 @@ import { Router } from '@angular/router';
   styleUrl: './api.component.scss'
 })
 export class ApiComponent implements OnInit{
+  private ngUnsubscribe = new Subject<void>();
   tittleTable = ''
   columns:any = []
   values:any = []
@@ -28,9 +30,14 @@ export class ApiComponent implements OnInit{
   ){
 
   }
+  ngOnDestroy(): void {
+    this.ngUnsubscribe.next();
+    this.ngUnsubscribe.complete();
+
+  }
   ngOnInit(): void {
     sessionStorage.clear()
-  this.services.getSelection().subscribe({
+  this.services.getSelection().pipe(takeUntil(this.ngUnsubscribe)).subscribe({
     next:(x:any)=>{
       //console.log('seleccion del usuario en el api', x)
       if(x != ''){
