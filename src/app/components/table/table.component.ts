@@ -109,7 +109,7 @@ export class TableComponent implements OnInit, AfterViewInit {
             for(let i of this.data){
               if(i.id == result.id){
                 //console.log('lo encontre',i)
-                i.ciudad = result.country
+                i.pais = result.country
                 i.nombre = result.name
                 i.abreviatura = result.shortname
               }
@@ -128,7 +128,7 @@ export class TableComponent implements OnInit, AfterViewInit {
             for(let i of this.data){
               if(i.id == result.id){
                 //console.log('lo encontre',i)
-                i.ciudad = result.country
+                i.pais = result.country
                 i.nombre = result.name
                 i.abreviatura = result.shortname
                 i.participantes = result.participant
@@ -164,7 +164,7 @@ export class TableComponent implements OnInit, AfterViewInit {
             this.data.push(
               {
               id:this.generateRandomNumber(1, 100),
-              ciudad:result.country,
+              pais:result.country,
               nombre:result.name,
               abreviatura:result.shortname
               }
@@ -192,7 +192,7 @@ export class TableComponent implements OnInit, AfterViewInit {
             this.data.push(
               {
               id:this.generateRandomNumber(1, 100),
-              ciudad:result.country,
+              pais:result.country,
               nombre:result.name,
               abreviatura:result.shortname,
               participantes : result.participant

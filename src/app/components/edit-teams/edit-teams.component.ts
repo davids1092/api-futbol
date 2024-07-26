@@ -45,12 +45,12 @@ export class EditTeamsComponent implements OnInit {
 
     }
     if(this.data.title == 'Equipos'){
-      this.form.controls['country'].setValue(this.dataAutocompletar.ciudad)
+      this.form.controls['country'].setValue(this.dataAutocompletar.pais)
       this.form.controls['name'].setValue(this.dataAutocompletar.nombre)
       this.form.controls['shortname'].setValue(this.dataAutocompletar.abreviatura)
       this.form.controls['id'].setValue(this.dataAutocompletar.id)
     }else{
-      this.formT.controls['country'].setValue(this.dataAutocompletar.ciudad)
+      this.formT.controls['country'].setValue(this.dataAutocompletar.pais)
       this.formT.controls['name'].setValue(this.dataAutocompletar.nombre)
       this.formT.controls['shortname'].setValue(this.dataAutocompletar.abreviatura)
       this.formT.controls['id'].setValue(this.dataAutocompletar.id)

@@ -93,11 +93,11 @@ export class ApiComponent implements OnInit{
     this.services.findTeams().subscribe({
       next:(x:any)=>{
         sessionStorage.setItem('Equipos',JSON.stringify(x))
-        this.columns = ['ciudad','nombre','abreviatura']
+        this.columns = ['pais','nombre','abreviatura']
         for(let i of x){
           let team = {
             'id':i.id,
-            'ciudad':i.country.name,
+            'pais':i.country.name,
             'nombre': i.name,
             'abreviatura':i.shortName
           }
@@ -117,13 +117,13 @@ export class ApiComponent implements OnInit{
     let x:any  = sessionStorage.getItem('Equipos')
     x = JSON.parse(x)
     //console.log('base', x)
-    this.columns = ['ciudad','nombre','abreviatura']
+    this.columns = ['pais','nombre','abreviatura']
     setTimeout(() => {
       for(let i of x){
      
         let team = {
           'id':i.id,
-          'ciudad':i.country.name,
+          'pais':i.country.name,
           'nombre': i.name,
           'abreviatura':i.shortName
         }
@@ -144,13 +144,13 @@ export class ApiComponent implements OnInit{
       this.services.findTournaments().subscribe({
         next:(x:any)=>{
           sessionStorage.setItem('Torneos',JSON.stringify(x))
-          this.columns = ['ciudad','nombre','participantes','abreviatura']
+          this.columns = ['pais','nombre','participantes','abreviatura']
          
           for(let i of x){
        
             let team = {
               'id':i.id,
-              'ciudad':i.country.name,
+              'pais':i.country.name,
               'nombre': i.name,
               'participantes':i.participantType.name,
               'abreviatura':i.shortName
@@ -173,12 +173,12 @@ export class ApiComponent implements OnInit{
       let x:any  = sessionStorage.getItem('Torneos')
       x = JSON.parse(x)
       //console.log('base', x)
-      this.columns = ['ciudad','nombre','participantes','abreviatura']
+      this.columns = ['pais','nombre','participantes','abreviatura']
       setTimeout(() => {
         for(let i of x){
           let team = {
             'id':i.id,
-            'ciudad':i.country.name,
+            'pais':i.country.name,
             'nombre': i.name,
             'abreviatura':i.shortName,
             'participantes':i.participantType.name

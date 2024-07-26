@@ -13,7 +13,7 @@
     <form class="form" [formGroup]="form" >
         <div>
           <mat-form-field appearance="outline">
-            <mat-label>Ciudad</mat-label>
+            <mat-label>Pais</mat-label>
             <input matInput type="text" minlength="3" maxlength="30"  formControlName="country" />
             <mat-error *ngIf="form.controls['country'].invalid">
                 {{ getErrorMessage(form.controls["country"]) }}</mat-error>
@@ -57,7 +57,7 @@
   <form class="form" [formGroup]="formT"  >
     <div>
       <mat-form-field appearance="outline">
-        <mat-label>Ciudad</mat-label>
+        <mat-label>Pais</mat-label>
         <input matInput type="text" minlength="3" maxlength="30"  formControlName="country" />
         <mat-error *ngIf="formT.controls['country'].invalid">
             {{ getErrorMessage(formT.controls["country"]) }}</mat-error>
